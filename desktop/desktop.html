@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false" id="html">
+    <head>
+        <style>@import url(desktop.css); @import url(apps.css);</style>
+        <title>EarthOS Concept</title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body id="dockBody">
+        <div class="menubar">
+            <div class="menuContainer">
+                <p class="menuItem" id="file-item">File</p>
+                <p class="menuItem" id="edit-item">Edit</p>
+                <p class="menuItem" id="view-item">View</p>
+                <p class="menuItem" id="go-item">Go</p>
+                <p class="menuItem" id="window-item">Window</p>
+                <p class="menuItem" id="help-item">Help</p>
+            </div>
+            <div class="sysIconContainer"></div>
+        </div>
+        <div class="dockContainer">
+            <div class="dock">
+                <div class="dockItem" id="system-icons">
+                    <div class="dockIconContainer" id="start-menu-icon-container">
+                        <img src="src/svg/dark/start-menu.svg" alt="Start Menu" class="sysIcon" id="start-menu-icon">
+                    </div>
+                    <div class="dockIconContainer" id="search-icon-container">
+                        <img src="src/svg/dark/search.svg" alt="Search" class="sysIcon" id="search-icon">
+                    </div>
+                    <div class="dockIconContainer" id="tasks-icon-container">
+                        <img src="src/svg/dark/tasks.svg" alt="Tasks" class="sysIcon" id="tasks-icon">
+                    </div>
+                </div>
+                <div class="dockItem" id="apps">
+                    <img src="src/icon/file-explorer.png" id="file" alt="File Explorer" class="appIcon inactive" onclick="activeState('file')" oncontextmenu="inactiveState('file')">
+                </div>
+                <div class="dockItem">
+                    <div class="dockIconContainer" id="settings-icon-container">
+                        <img src="src/svg/dark/settings.svg" onclick="showSettings()" alt="Settings" class="sysIcon" id="settings-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="customizationContainer" id="customContainer">
+            <div class="customizationHiddenOnStart" id="customization">
+                <div class="customizationItem">
+                    <div class="customizationPanel">
+                        <img src="src/wallpaper/default.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('default')">
+                        <img src="src/wallpaper/autumn.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('autumn')">
+                        <img src="src/wallpaper/beach.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('beach')">
+                        <img src="src/wallpaper/blue_crystals.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('blue_crystals')">
+                        <img src="src/wallpaper/crystal_purple.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('crystal_purple')">
+                        <img src="src/wallpaper/feather.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('feather')">
+                        <img src="src/wallpaper/flower_leaf.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('flower_leaf')">
+                        <img src="src/wallpaper/liquid.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('liquid')">
+                        <img src="src/wallpaper/polar.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('polar')">
+                        <img src="src/wallpaper/river.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('river')">
+                        <img src="src/wallpaper/rose_leaf.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('rose_leaf')">
+                        <img src="src/wallpaper/rose.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('rose')">
+                        <img src="src/wallpaper/skyscrapers.jpg" alt="Default" class="wallpaperItem" onclick="changeWallpaper('skyscrapers')">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="file-window" class="windowHiddenOnStart">
+            <div id="file-window-size-0" class="visibleWindowContent">
+                <div class="windowTitlebar" id="file-windowTitlebar">
+                    <p class="windowTitlebarText">Window</p>
+                    <div class="windowTitlebarButtonContainer">
+                        <button class='minimize'></button>
+                        <button class='maximize' onclick="largeWindow('file-window-size-0', 'file-window-size-1')"></button>
+                        <button class='close' onclick="closeWindow('file')"></button>
+                    </div>
+                </div>
+                <p>This is an EarthOS Application</p>
+                <p>EarthOS is a the biggest evolution in UI and UX!</p>
+            </div>
+            <div id="file-window-size-1" class="invisibleWindowContent">
+                <div class="sideBarContainer">
+
+                </div>
+                <div class="windowTitlebar" id="file-windowTitlebar">
+                    <p class="windowTitlebarText">Window</p>
+                    <div class="windowTitlebarButtonContainer">
+                        <button class='minimize'></button>
+                        <button class='maximize' onclick="largeWindow('file-window-size-0', 'file-window-size-1')"></button>
+                        <button class='close' onclick="closeWindow('file')"></button>
+                    </div>
+                </div>
+                <div class="sideBarAppMainContent">
+                    
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        <div id="example-window" class="windowHiddenOnStart">
+            <div id="example-window-size-0" class="visibleWindowContent">
+                <div class="windowTitlebar" id="file-windowTitlebar">
+                    <p class="windowTitlebarText">Window</p>
+                    <div class="windowTitlebarButtonContainer">
+                        <button class='minimize' ></button>
+                        <button class='maximize' onclick="largeWindow('example-window-size-0', 'example-window-size-1')"></button>
+                        <button class='close' onclick="closeWindow('example')"></button>
+                    </div>
+                </div>
+                <p>This is an EarthOS Application</p>
+                <p>EarthOS is a the biggest evolution in UI and UX!</p>
+            </div>
+            <div id="example-window-size-1" class="invisibleWindowContent">
+                <div class="windowTitlebar" id="file-windowTitlebar">
+                    <p class="windowTitlebarText">Window</p>
+                    <div class="windowTitlebarButtonContainer">
+                        <button class='minimize' ></button>
+                        <button class='maximize' onclick="largeWindow('example-window-size-0', 'example-window-size-1')"></button>
+                        <button class='close' onclick="closeWindow('example')"></button>
+                    </div>
+                </div>
+                <p>This is an EarthOS Application</p>
+                <p>EarthOS is a the biggest evolution in UI and UX!</p>
+                <p>It runs on a highly efficient codebase with lots of support.</p>
+            </div>
+            
+        </div>
+        <div class="widgetContainer">
+            <div class="widgetVerticalContainer">
+                <div class="widgetLeft">
+                    <p>This is</p>
+                    <p>a Widget</p>
+                </div>
+                <div class="photoWidget">
+                    <p class="photoWidgetText">March 4th 2022</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="desktop.js"></script>
+    <script src="windows.js"></script>
+</html>
